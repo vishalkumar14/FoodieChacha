@@ -1,0 +1,38 @@
+.col.span-1-of-3.PlanCard
+    .plan-box.js--wp-4
+        div
+            h3 #{plan.name}
+            p.plan-price $#{plan.planprice}   
+                if plan.packageType !== "Starter"
+                    span /month
+                else
+                    span /meal
+            p.plan-price-meal That's only #{plan.price}$ per meal
+        div
+            ul
+                li
+                    i.ion-ios-checkmark-empty.icon-small 
+                    | <em> #{plan.packageType}</em>
+                li
+                    i.ion-ios-checkmark-empty.icon-small 
+                    | #{plan.mealFreq}
+                li
+                    i.ion-ios-checkmark-empty.icon-small 
+                    | #{plan.OrderType}
+
+                if plan.access === "Yes"
+                    li
+                        i.ion-ios-checkmark-empty.icon-small 
+                        | Access to newest creations
+                else
+                    li
+                        i.ion-ios-close-empty.icon-small  
+                        | Access to newest creations    
+
+                li
+                    i.ion-ios-checkmark-empty.icon-small 
+                    | Free Delivery
+
+        div
+            a.btn.btn-full.btn-detail(href=`/productPage/${plan["_id"]}` plandata = plan["_id"]) Details
+

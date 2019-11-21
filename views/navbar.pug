@@ -1,0 +1,25 @@
+nav.navbar
+    div.row
+        a(href="/#main-home")
+            img(
+                src="/Omnifood Contents/newlogo.png", alt="OmniFood Logo", class="logo")
+        a(href="/#main-home")
+            img(
+                src="/Omnifood Contents/newlogo.png", alt="OmniFood Logo", class="logo-black")
+            ul(class=["main-nav", "js--main-nav"])
+                li
+                    a(href="/#feature") Food Delivery
+                li
+                    a(href="/#steps") How it Works
+                li
+                    a(href="/#cities") Out Cities
+                if user
+                    li
+                        a(href="/userPage") Profile
+                else
+                    li
+                        a(href="/signup") Sign Up
+                    li
+                        a(href="/login") Login
+            a(class=["mobile-nav-icon", "js--nav-icon"])
+                i.ion-navicon-round

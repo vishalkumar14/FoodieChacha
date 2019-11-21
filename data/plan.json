@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Organic",
+        "description": "Best In The Market Organic",
+        "price": "$30",
+        "rating": "4.5",
+        "duration": "1 Days"
+    },
+    {
+        "id": 2,
+        "name": "Non Veg",
+        "description": "Best In The Market Non Veg",
+        "price": "$50",
+        "rating": "4",
+        "duration": "1/2 Days"
+    },
+    {
+        "id": 3,
+        "name": "Veg",
+        "description": "Best In The Market Veg",
+        "price": "$20",
+        "rating": "4.5",
+        "duration": "5 Days"
+    },
+    {
+        "name": "Sea Food",
+        "description": "Fresh and Best Sea Food In Market",
+        "price": "$200",
+        "rating": "4.3",
+        "duration": "2 Days",
+        "id": 4
+    },
+    {
+        "name": "French Food",
+        "description": "Direct From France",
+        "price": "$100",
+        "rating": "4.2",
+        "duration": "5 Days",
+        "id": 5
+    }
+]

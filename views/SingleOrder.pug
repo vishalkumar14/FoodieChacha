@@ -1,0 +1,12 @@
+.col.span-1-of-3
+    .plan-box
+        div
+            h3 #{order.name}
+            p.plan-price $#{order.planprice}
+        div
+            ul
+                li
+                    i.ion-ios-checkmark-empty.icon-small
+                    | #{order.packageType}
+        div
+            a.btn.btn-full(href=`/productPage/${order.planid}`) Details

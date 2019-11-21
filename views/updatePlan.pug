@@ -1,0 +1,50 @@
+extend base
+block mainBlock
+    section.options-updateplan
+        .row
+            h2 Update Plan
+        .row
+            form.contact-form.updatePlan-form(plan-id=`${plan["_id"]}`)
+                .row.reset-field
+                    .col.span-1-of-3
+                        label(for='planName') Plan Name
+                    .col.span-2-of-3
+                        input#planName(type='text' name='name' placeholder='e.g Pujabi Tadka' value=`${plan.name}`)
+                .row.reset-field
+                    .col.span-1-of-3
+                        label(for='price') Plan Price
+                    .col.span-2-of-3
+                        input#price(type='number' name='planprice' placeholder='e.g 150' minlength='1' value=`${plan.planprice}`)
+                .row.reset-field
+                    .col.span-1-of-3
+                        label(for='mealPrice') Meal Price
+                    .col.span-2-of-3
+                        input#mealPrice(type='number' name='price' placeholder='e.g 10' minlength='1' value=`${plan.price}`)
+                .row.reset-field
+                    .col.span-1-of-3
+                        label(for='access') Access to Newest Creations
+                    .col.span-2-of-3
+                        input#access(type='text' name='access' placeholder='e.g Yes/No' minlength='2' value=`${plan.access}`)
+                .row.reset-field
+                    .col.span-1-of-3
+                        label(for='packageType') Package Type
+                    .col.span-2-of-3
+                        input#packageType(type='text' name='packageType' placeholder='e.g Premiun/Pro/Starter' value=`${plan.packageType}`)
+                .row.reset-field
+                    .col.span-1-of-3
+                        label(for='mealFreq') Meal Frequency(e.g 1 meal every day)
+                    .col.span-2-of-3
+                        input#mealFreq(type='text' name='mealFreq' placeholder='e.g 1 meal 10 days/meal' value=`${plan.mealFreq}`)
+                .row.reset-field
+                    .col.span-1-of-3
+                        label(for='OrderType') Order Type
+                    .col.span-2-of-3
+                        input#OrderType(type='text' name='OrderType' placeholder='e.g Order 24/7' value=`${plan.OrderType}`)
+                .row.reset-field
+                    .col.span-1-of-3
+                        label(for='description') Description
+                    .col.span-2-of-3
+                        textarea#description(type='text' name='description' placeholder='Plan Description' value=`${plan.description}`)
+                .row
+                    .userSubmit
+                        input(type='submit' value='Submit')    

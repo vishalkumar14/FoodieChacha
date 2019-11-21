@@ -1,0 +1,32 @@
+extend base
+block mainBlock
+    section#form.section-login
+        .row
+            h2 Login
+        .row
+            form.login-form
+                .row.login-field
+                    .col.span-3-of-3
+                        label(for='uname') Username
+                    .col.span-3-of-3
+                        input(type='text' placeholder='Enter Username' name='uname' required='')
+                .row.login-field
+                    .col.span-3-of-3
+                        label(for='password') Password (8 characters minimum)
+                    .col.span-3-of-3
+                        input#pass(type='password' name='password' placeholder='Enter Password' minlength='8' required='')
+                .row.login-field
+                    .forgetRemember
+                        .flexItem
+                            input(type="checkbox" name="remember" id="remember" checked)
+                            | Remember me
+                        .flexItem
+                            a(href="/forgetpassword") Forget Password?
+                .row.login-field
+                    .col.span-1-of-2
+                    .col.span-2-of-2
+                        input(type='submit' value='Login')
+                .row.login-field
+                    .col.span-1-of-2
+                        span Don't have an acount? 
+                        a(href="/signup") &nbsp; SignUp 

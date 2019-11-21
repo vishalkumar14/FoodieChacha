@@ -1,0 +1,36 @@
+extend base
+block mainBlock
+    section#form.section-signup
+        .row
+            h2 Sign Up
+        .row
+            form.contact-form.signup-form
+                .row.signup-field
+                    .col.span-1-of-3
+                        label(for='name') Name
+                    .col.span-2-of-3
+                        input#name(type='text' name='name' placeholder='Your Name' required='' value='')
+                .row.signup-field
+                    .col.span-1-of-3
+                        label(for='email') Email
+                    .col.span-2-of-3
+                        input#email(type='text' name='email' placeholder='Your Email' required='' value='')
+                .row.signup-field
+                    .col.span-1-of-3
+                        label(for='uname') Username
+                    .col.span-2-of-3
+                        input(type='text' placeholder='Enter Username' name='uname' required='' value='')
+                .row.signup-field
+                    .col.span-1-of-3
+                        label(for='password') Password (8 characters minimum)
+                    .col.span-2-of-3
+                        input#pass(type='password' name='password' placeholder='Enter Password' minlength='8' required='' value='')
+                .row.signup-field
+                    .col.span-1-of-3
+                        label(for='confirmpassword') Confirm Password
+                    .col.span-2-of-3
+                        input#confirmpass(type='password' name='confirmpassword' placeholder='Confirm Password' minlength='8' required='' value='')
+                .row
+                    .col.span-1-of-3
+                    .col.span-2-of-3
+                        input(type='submit' value='Sign Up')

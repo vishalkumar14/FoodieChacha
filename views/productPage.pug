@@ -1,0 +1,97 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        meta(http-equiv='X-UA-Compatible' content='ie=edge')
+        link(rel='stylesheet' href='/vendors/css/normalize.css')
+        link(rel='stylesheet' href='/vendors/css/grid.css')
+        link(rel='stylesheet' href='/vendors/css/ionicons.min.css')
+        link(rel='stylesheet' href='/vendors/css/animate.css')
+        link(rel='stylesheet' href='/resources/css/style.css')
+        link(rel='stylesheet' href='/resources/css/queries.css')
+        link(href='https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap' rel='stylesheet')
+        title #{title}
+        link(rel='apple-touch-icon' sizes='180x180' href='/resources/favicons/apple-touch-icon.png')
+        link(rel='icon' type='image/png' sizes='16x16' href='/resources/favicons/favicon-16x16.png')
+        link(rel='icon' type='image/png' sizes='32x32' href='/resources/favicons/favicon-32x32.png')
+        link(rel='manifest' href='/resources/favicons/site.webmanifest')
+        link(rel='mask-icon' href='/resources/favicons/safari-pinned-tab.svg' color='#3e3f3f')
+        link(rel='shortcut icon' href='/resources/favicons/favicon.ico')
+        meta(name='msapplication-TileColor' content='#ffffff')
+        meta(name='msapplication-config' content='/resources/favicons/browserconfig.xml')
+        meta(name='theme-color' content='#ffffff')
+    body
+        div.product-background
+            header.product-home(style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),\
+            url('/resources/css/img/Background3.jpg');")
+                include navbar
+                .productTextBox
+                    h1.ProductName #{plan.name}
+                    .ProductTextContainer
+                        .ProductText
+                            span #{plan.packageType}
+                            span Free Delivery
+            section.productsection
+                .row
+                    .aboutPlan
+                        .FeaturesText
+                            .feature
+                                .productsubHeading
+                                    h3 Features
+                                .featurelist
+                                    ul
+                                        li
+                                            i.ion-ios-checkmark-empty.icon-small
+                                            | #{plan.mealFreq}
+                                        li
+                                            i.ion-ios-checkmark-empty.icon-small
+                                            | #{plan.OrderType}
+
+                                        if plan.access === "Yes"
+                                            li
+                                                i.ion-ios-checkmark-empty.icon-small 
+                                                | Access to newest creations
+                                        else
+                                            li
+                                                i.ion-ios-close-empty.icon-small  
+                                                | Access to newest creations
+                                        li
+                                            i.ion-ios-checkmark-empty.icon-small
+                                            | Free Delivery
+                            .PriceSection
+                                .PriceBox
+                                    h3 Price
+                                    .PriceText
+                                        span.Price $#{plan.planprice}
+                                            if plan.packageType !== "Starter"
+                                                | /month
+                                            else
+                                                | /meal /month
+                        .PriceandAbout
+                            .AboutText
+                                .productsubHeading
+                                    h3 About The #{plan.name}
+                                .content
+                                    p #{plan.description}
+                .row
+                    .Buy
+                        if user.role !== "admin"
+                            a.btn.btn-full.buy-btn(href="#" plan-id =`${plan["_id"]}` user-id =`${user["_id"]}`) Buy
+                        else if user.role !== "user"
+                            a.btn.btn-full.deleteplan-btn(href="#" plan-id=`/${plan["_id"]}`) Delete
+                            a.btn.btn-full.updateplan-btn(href=`/updatePlan/${plan["_id"]}` plan-id=`/${plan["_id"]}`) Update
+                        else
+                            a.btn.btn-full.buy-btn(href='/login') Buy
+
+        include footer.pug
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+        script(src='https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js')
+        script(src='https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js')
+        script(src='https://cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js')
+        script(src="https://js.stripe.com/v3/")
+        script(src='/vendors/js/jquery.waypoints.min.js')
+        script(src='/resources/js/ImageUpload.js')
+        script(src='/resources/js/script.js')
+        script(src='/resources/js/login.js')

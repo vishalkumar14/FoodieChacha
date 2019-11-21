@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        meta(http-equiv='X-UA-Compatible' content='ie=edge')
+        link(rel='stylesheet' href='/vendors/css/normalize.css')
+        link(rel='stylesheet' href='/vendors/css/grid.css')
+        link(rel='stylesheet' href='/vendors/css/ionicons.min.css')
+        link(rel='stylesheet' href='/vendors/css/animate.css')
+        link(rel='stylesheet' href='/resources/css/style.css')
+        link(rel='stylesheet' href='/resources/css/queries.css')
+        link(href='https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap' rel='stylesheet')
+        title #{title}
+        link(rel='apple-touch-icon' sizes='180x180' href='/resources/favicons/apple-touch-icon.png')
+        link(rel='icon' type='image/png' sizes='16x16' href='/resources/favicons/favicon-16x16.png')
+        link(rel='icon' type='image/png' sizes='32x32' href='/resources/favicons/favicon-32x32.png')
+        link(rel='manifest' href='/resources/favicons/site.webmanifest')
+        link(rel='mask-icon' href='/resources/favicons/safari-pinned-tab.svg' color='#3e3f3f')
+        link(rel='shortcut icon' href='/resources/favicons/favicon.ico')
+        meta(name='msapplication-TileColor' content='#ffffff')
+        meta(name='msapplication-config' content='/resources/favicons/browserconfig.xml')
+        meta(name='theme-color' content='#ffffff')
+    body
+        include navbar.pug
+        block mainBlock
+        include footer.pug
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+        script(src='https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js')
+        script(src='https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js')
+        script(src='https://cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js')
+        script(src="https://js.stripe.com/v3/")
+        script(src='/vendors/js/jquery.waypoints.min.js')
+        script(src='/resources/js/ImageUpload.js')
+        script(src='/resources/js/script.js')
+        script(src='/resources/js/login.js')
